@@ -2,48 +2,45 @@
 
 //FUNÇÕES
 
-const alunosTurmaA = [{
-        nome: "Pedro",
-        nota: 4.5
+const classA = [{
+        name: "Pedro",
+        grade: 4.5
     },
     {
-        nome: "Mateus",
-        nota: 6.2
+        name: "Mateus",
+        grade: 6.2
     },
     {
-        nome: "João",
-        nota: 2.3
+        name: "João",
+        grade: 2.3
     }
 ]
 
-const alunosTurmaB = [{
-        nome: "Natan",
-        nota: 4.3
+const classB = [{
+        name: "Natan",
+        grade: 4.3
     },
     {
-        nome: "Suellen",
-        nota: 6.9
+        name: "Suellen",
+        grade: 6.9
     },
     {
-        nome: "Cacau",
-        nota: 2.7
+        name: "Cacau",
+        grade: 2.7
     }
 ]
 
-function calculaMedia(alunos) {
-    let soma = 0;
-    for (let i = 0; i < alunos.length; i++) {
-        soma = soma + alunos[i].nota
+function calculateAverage(students) {
+    let sum = 0;
+    for (let i = 0; i < students.length; i++) {
+        sum = sum + students[i].grade
     }
 
-    const media = soma / alunos.length
+    const media = sum / students.length
     return media
 }
 
-const media1 = calculaMedia(alunosTurmaA)
-const media2 = calculaMedia(alunosTurmaB)
-
-function enviaMensagem(media, turma) {
+function sendMessage(media, turma) {
     //SE A MEDIA FOR MAIOR QUE 5, PARABENIZAR A TURMA
     if (media >= 5) {
         console.log(`A media da ${turma}, foi de ${media.toFixed(2)} Parabens!`)
@@ -52,37 +49,36 @@ function enviaMensagem(media, turma) {
     }
 }
 
-enviaMensagem(media1, 'TurmaA')
-enviaMensagem(media2, 'TurmaB')
+//Marcar student como reprovado se a grade for menor que 5 e tbm enviar uma msg
 
-
-//Marcar aluno como reprovado se a nota for menor que 5 e tbm enviar uma msg
-
-function marcarComoReprovado(aluno) {
-    aluno.reprovado = false
-    if (aluno.nota < 5) {
-        aluno.reprovado = true
+function marcarComoReprovado(student) {
+    student.reprovado = false
+    if (student.grade < 5) {
+        student.reprovado = true
     }
 }
 
-marcarComoReprovado(alunosTurmaA)
-marcarComoReprovado(alunosTurmaB)
-
-function enviarMensagemDeReprovado(aluno) {
-    if (aluno.reprovado) {
-        console.log(`O Aluno ${aluno.nome} está REPROVADO!`)
+function enviarMensagemDeReprovado(student) {
+    if (student.reprovado) {
+        console.log(`O Aluno ${student.name} está REPROVADO!`)
     } else {
-        console.log(`O Aluno ${aluno.nome} está APROVADO!`)
+        console.log(`O Aluno ${student.name} está APROVADO!`)
     }
 }
 
-function alunoReprovado(alunos) {
-    //Para cada "aluno" da lista de alunos, faça!
-    for (let aluno of alunos) {
-        marcarComoReprovado(aluno)
-        enviarMensagemDeReprovado(aluno)
+function studentsReprovados(students) {
+    //Para cada "student" da lista de students, faça!
+    for (let student of students) {
+        marcarComoReprovado(student)
+        enviarMensagemDeReprovado(student)
     }
 }
 
-alunoReprovado(alunosTurmaA)
-alunoReprovado(alunosTurmaB)
+const media1 = calculateAverage(classA)
+const media2 = calculateAverage(classB)
+
+sendMessage(media1, 'TurmaA')
+sendMessage(media2, 'TurmaB')
+
+studentsReprovados(classA)
+studentsReprovados(classB)
