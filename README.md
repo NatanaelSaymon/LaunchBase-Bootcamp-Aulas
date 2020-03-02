@@ -1,0 +1,1 @@
+Repositório criado para postagem de aulas relacionadas ao curso Launchbase desenvolvido pela Rocketseat.
