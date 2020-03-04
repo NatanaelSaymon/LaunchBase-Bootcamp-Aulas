@@ -95,6 +95,7 @@ header{
 
 .card{
     background-color: var(--color-rocket);
+    cursor: pointer;
 }
 
 .card_image-container img{
@@ -117,4 +118,39 @@ header{
     padding: 5px 20px;
     border-radius: 20px;
     text-align: center;
+}
+
+/*=== MODAL ===*/
+
+.modal-overlay{
+    background-color: rgba(0, 0, 0, 0.7);
+    width: 100%;
+    height: 100%;
+    position: fixed; /*fica fixado na tela*/
+    top: 0;
+    opacity: 0; /*para deixar transparente*/
+    visibility: hidden;  /*visibilidade escondida*/;
+}
+
+.modal{
+    position: relative;
+    background-color: #ffffff;
+    width: 90%;
+    height: 90%;
+    margin: 5vh auto;
+}
+
+.modal .close-modal{
+    position: absolute; /*fica absoluto dentro do modal pq o pai dele está com position relative*/
+    color: #000;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+/*=== MODAL.ACTIVE ===*/
+
+.modal-overlay.active{
+    opacity: 1;
+    visibility: visible; /*visivel*/
 }
