@@ -95,6 +95,7 @@ header{
 
 .card{
     background-color: var(--color-rocket);
+    display: grid;
     cursor: pointer;
 }
 
@@ -110,6 +111,7 @@ header{
 .card_info{
     display: grid;
     grid-template-columns: 1fr 1fr; /*deixa com 2 colunas e flexivel no tamanho*/
+    align-items: center;
 }
 
 .card_price{
