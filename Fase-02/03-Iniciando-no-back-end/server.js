@@ -34,6 +34,22 @@ server.get("/portfolio", function(req, res){
     return res.render('portfolio', { items: videos })
 })
 
+server.get("/video", function(req, res){
+    const id = req.query.id
+
+    const video = videos.find(function(video){ //Fazendo uma filtragem usando a função FIND para encontrar o "video"
+        if(video.id == id){ //Se ele encontrar o id, ele vai inserir na variavel
+            return true
+        }
+
+        return res.render('video', { item: video }) //Se ele encontrou o video, vai renderizar uma pagina nova!
+    })
+
+    if(!video){ //se ele não encontrou, ele vai retornar uma mensagem de erro.
+        return res.send("Video not found!")
+    }
+})
+
 server.listen(5000, function(){
     console.log("server is runnign")
 })
