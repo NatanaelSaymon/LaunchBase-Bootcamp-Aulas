@@ -163,3 +163,20 @@ iframe{
     top: 5%;
     position: absolute;
 }
+
+/*=== Featured  ===*/
+
+.featured-wrapper.card_image-container{
+    position: relative;
+}
+
+.featured{
+    position: absolute;
+    background: #f7d05f;
+    color: #111;
+    right: 5px;
+    padding: 2px 8px;
+    border-radius: 16px;
+    top: -11px;
+}
+

@@ -17,20 +17,25 @@
             <!--card-->
             {% for item in items %} 
             <!--Dentro dessa estrutura de repetição, ele vai repetir para cada item que tiver, nesse caso, são 6 itens-->
-            <div class="card" id="{{item.id}}">
-                <div class="card_image-container">
+            <div class="card" id="{{ item.id }}">
+                <div class="card_image-container {{ 'featured-wrapper' if item.featured }}"> <!--Inserindo um if direito no html-->
                     <img 
-                    src="https://img.youtube.com/vi/{{item.id}}/maxresdefault.jpg" 
-                    alt="Imagem de {{item.title}}">
+                    src="https://img.youtube.com/vi/{{ item.id }}/maxresdefault.jpg" 
+                    alt="Imagem de {{ item.title }}">
+
+                    <!--Destaque no video-->
+                    {% if item.featured %}
+                        <div class="featured">Featured</div>
+                    {% endif %}
                 </div>
 
                 <div class="card_content">
-                    <p>{{item.title}}</p>
+                    <p>{{ item.title }}</p>
                 </div>
     
                 <div class="card_info">
-                    <p>{{item.duration}}</p>
-                    <p class="card_price">{{item.price}}</p>
+                    <p>{{ item.duration }}</p>
+                    <p class="card_price">{{ item.price }}</p>
                 </div>
             </div>
             {%endfor%} <!--FECHAMENTO DO FOR-->
