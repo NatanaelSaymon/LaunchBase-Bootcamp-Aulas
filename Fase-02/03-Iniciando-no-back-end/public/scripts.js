@@ -10,9 +10,9 @@ for(let card of cards){
     })
 }
 
-/*isnerindo a função de fechar o modal*/
-document.querySelector('.close-modal').addEventListener("click", function(){
-    modalOverlay.classList.remove('active')
-    modalOverlay.querySelector('iframe').src = "" /* remove o video */
-})
+//isnerindo a função de fechar o modal
+// document.querySelector('.close-modal').addEventListener("click", function(){
+//     modalOverlay.classList.remove('active')
+//     modalOverlay.querySelector('iframe').src = "" /* remove o video */
+// })
 
