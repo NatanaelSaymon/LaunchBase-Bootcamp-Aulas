@@ -5,8 +5,9 @@ const cards = document.querySelectorAll('.card')
 for(let card of cards){
     card.addEventListener("click", function(){
         const videoId = card.getAttribute('id') /* Pegar o atributo ID*/
-        modalOverlay.classList.add('active')
-        modalOverlay.querySelector('iframe').src = `https://youtube.com/embed/${videoId}`
+        window.location.href = `/video?id=${videoId}`
+        // modalOverlay.classList.add('active')
+        // modalOverlay.querySelector('iframe').src = `https://youtube.com/embed/${videoId}`
     })
 }
 
